@@ -1,1 +1,1 @@
-# example-scraper-rust
+# example-scraper
