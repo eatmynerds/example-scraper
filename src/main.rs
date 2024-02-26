@@ -1,3 +1,4 @@
+#![allow(unused_variables)]
 use futures::{stream, StreamExt};
 use lazy_static::lazy_static;
 use reqwest::Client;
@@ -16,6 +17,7 @@ const BASE_URL: &'static str = "https://flixhq.to";
 async fn main() -> anyhow::Result<()> {
     let now = Instant::now();
 
+    // This is used later in the code to get the page ids from
     let page_html = CLIENT
         .get(format!(
             "{}/search/{}?page={}",
@@ -26,6 +28,7 @@ async fn main() -> anyhow::Result<()> {
         .text()
         .await?;
 
+    // Page ids from the page_html
     let ids = vec![
         Some(String::from("movie/watch-wonka-103654")),
         Some(String::from("movie/watch-wonka-103654")),
