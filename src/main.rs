@@ -18,15 +18,15 @@ async fn main() -> anyhow::Result<()> {
     let now = Instant::now();
 
     // This is used later in the code to get the page ids from
-    let page_html = CLIENT
-        .get(format!(
-            "{}/search/{}?page={}",
-            BASE_URL, "example-query", 1
-        ))
-        .send()
-        .await?
-        .text()
-        .await?;
+    // let page_html = CLIENT
+    //     .get(format!(
+    //         "{}/search/{}?page={}",
+    //         BASE_URL, "example-query", 1
+    //     ))
+    //     .send()
+    //     .await?
+    //     .text()
+    //     .await?;
 
     // Page ids from the page_html
     let ids = vec![
